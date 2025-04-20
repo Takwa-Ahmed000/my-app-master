@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './Navbar';
 import HeroSection from './HeroSection';
 import ScreenshotSection from './ScreenshotSection';
 import CoreFeatureSection from './CoreFeatureSection';
-import ContactForm from './ContactForm';
+//import FeaturesSection from './FeaturesSection';
 import Footer from './Footer';
-import FeedbackWizard from './FeedbackWizard'; // ✅ النموذج الجديد متعدد الخطوات
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [showFeedback, setShowFeedback] = useState(false);
-
-  const handleOpenFeedback = () => setShowFeedback(true);
-  const handleCloseFeedback = () => setShowFeedback(false);
-
   return (
     <div>
       {/* ✅ Navbar */}
-      <Navbar onOpenFeedback={handleOpenFeedback} />
+      <Navbar />
 
       {/* ✅ Hero Section */}
       <section id="home">
         <HeroSection />
       </section>
 
-      {/* ✅ Feature Section */}
+      {/* ✅ Feature Section - ليه تختار وصلني */}
       <section id="feature" style={{ padding: '100px 0', direction: 'rtl' }}>
         <div className="container">
           <h2 className="text-center mb-5" style={{ color: '#1c8c56', fontWeight: 'bold' }}>
@@ -59,33 +52,13 @@ function App() {
       {/* ✅ Core Feature Section */}
       <CoreFeatureSection />
 
-      {/* ✅ Contact Section */}
-      <section id="contact" style={{ padding: '100px 0', direction: 'rtl' }}>
-        <div className="container">
-          <h2 className="text-center mb-5" style={{ color: '#1c8c56', fontWeight: 'bold' }}>تواصل معنا</h2>
-          <ContactForm />
-        </div>
+      {/* ✅ Hire Us Section */}
+      <section id="hire-us" style={{ padding: '100px 0' }}>
+        {/* محتوى الحجز هيضاف هنا لاحقًا */}
       </section>
 
       {/* ✅ Footer */}
       <Footer />
-
-      {/* ✅ Modal لتقييم التطبيق */}
-      {showFeedback && (
-        <div className="modal d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
-          <div className="modal-dialog modal-lg modal-dialog-centered" dir="rtl">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">تقييم التطبيق</h5>
-                <button type="button" className="btn-close" onClick={handleCloseFeedback}></button>
-              </div>
-              <div className="modal-body">
-                <FeedbackWizard />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
