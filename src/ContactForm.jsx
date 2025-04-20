@@ -7,7 +7,7 @@ function ContactForm() {
     <section id="hire-us" className="contact-section">
       <div className="container">
         <h2 className="text-center mb-5" style={{ color: '#1c8c56', fontWeight: 'bold' }}>
-          تواصل معنا
+  
         </h2>
         <form className="contact-form">
           <div className="mb-3">
